@@ -1,5 +1,5 @@
 ---
-title: "Examine Life Expectancy"
+title: "Life Exp Analysis"
 author: "Mergen"
 date: "`r Sys.Date()`"
 output:
@@ -12,6 +12,14 @@ urlcolor: blue
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
+library(gapminder)
+```
+```{r, echo = TRUE}
+gap <- gapminder_unfiltered
+
+gap %>%
+  group_by(year, country) %>%
+  summarise(maxlife = max(lifeExp, na.rm = TRUE)) -> sumdat
 ```
 
 # Abstract
@@ -19,3 +27,5 @@ library(tidyverse)
 Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 
 # Analysis
+
+Very good analysis done here. 
