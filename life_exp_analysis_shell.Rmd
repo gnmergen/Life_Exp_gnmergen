@@ -14,6 +14,9 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(gapminder)
 ```
+This portion of text entered per 6.4.1 Exercise instructions. The code is grouping the dataset by Year and Country to find the maximum life expectancy for each country in the given year. 
+
+
 ```{r, echo = TRUE}
 gap <- gapminder_unfiltered
 
