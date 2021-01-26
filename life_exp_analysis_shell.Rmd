@@ -23,8 +23,16 @@ expectancy for each country in the given year.
 gap <- gapminder_unfiltered
 
 gap %>%
-  group_by(year, country) %>%
-  summarise(maxlife = max(lifeExp, na.rm = TRUE)) -> sumdat
+  group_by(year) %>%
+  filter(lifeExp == max(lifeExp)) %>%
+  select(year, country, lifeExp) %>%
+  arrange(lifeExp) -> sumdat
+
+ggplot(sumdat, mapping = aes(x = year, y = lifeExp, color = country)) +
+  geom_point()+
+  geom_smooth(method = "lm", se = FALSE, color = "darkblue", size = 1.5)+
+  theme_minimal()+
+  labs(x = "Year", y = "Maximum Life Expectancy")
 ```
 
 # Abstract
