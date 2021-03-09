@@ -41,4 +41,8 @@ Here, I re-examine the analysis of Oeppen and Vaupel (2002).
 
 # Analysis
 
+<<<<<<< HEAD
 Very good analysis done here. Editing in the test_name branch.
+=======
+Very good analysis done here. Editing in the test_name branch.
+>>>>>>> test_name
